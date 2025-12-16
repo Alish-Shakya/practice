@@ -84,33 +84,129 @@
     </section>
 
     <!-- about page  -->
-    <section
-      class="flex flex-col md:flex-row items-center justify-between mt-10 py-10 px-20"
-    >
-      <div>
-        <div class="w-1/5">
-          <h1 class="font-bold text-5xl">About me</h1>
-          <p class="text-red-500">Web Developer</p>
+    <section class="bg-black text-white px-20 py-20">
+      <div class="flex flex-col md:flex-row items-center gap-10">
+        <!-- Left Side -->
+        <div class="md:w-1/3 text-center md:text-left">
+          <h1 class="text-4xl font-bold mb-2">About Me</h1>
+          <p class="text-red-500 text-xl">Web Developer</p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore
+            minus voluptatibus, in exercitationem inventore alias fugiat
+            similique dolorum suscipit et magnam iure! Nobis dicta, quia ea
+            libero voluptatum minus illum!
+          </p>
         </div>
-        <div class="w-4/5 flex flex-col gao-10">
-          <div class="flex flex-col md:flex-row gap-10">
-            <div>
-              <img src="main.jpg" alt="pp" class="w-32 h-32 rounded-full" />
-              <p>Name: Alish Shakya</p>
-              <p>Location: Kapna</p>
+
+        <!-- Right Side -->
+        <div class="md:w-2/3 flex flex-col gap-8">
+          <!-- Profile Card -->
+          <div class="flex flex-col md:flex-row gap-6">
+            <div
+              class="bg-gray-800 p-5 rounded-xl flex flex-col items-center md:w-1/3 text-center"
+            >
+              <img
+                src="main.jpg"
+                alt="profile"
+                class="w-32 h-32 rounded-full border-4 border-red-500 mb-4"
+              />
+              <p class="font-semibold">Alihs Shakya</p>
+              <p class="text-gray-400">Kapan, Kathmandu</p>
             </div>
 
-            <div class="">
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Inventore alias delectus quo doloribus harum in neque tenetur,
-                veritatis sapiente libero, non ipsum placeat laborum fugit odit
-                eum maxime, earum voluptatibus.
-              </p>
+            <!-- Description -->
+            <!-- Description -->
+            <!-- Description -->
+            <div class="bg-gray-900 p-6 rounded-xl flex-1 text-gray-300">
+              <!-- Header -->
+              <div class="flex justify-between items-center mb-6">
+                <h2 id="title" class="text-2xl text-red-500 font-semibold">
+                  Skills
+                </h2>
+
+                <!-- Arrow button -->
+                <button
+                  onclick="toggleSection()"
+                  class="text-xl transition-transform duration-500"
+                  id="arrow"
+                >
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+
+              <!-- CONTENT -->
+              <div id="content">
+                <ul class="list-disc list-inside space-y-2">
+                  <li>Frontend: React, Tailwind CSS, JavaScript</li>
+                  <li>Backend: Node, Express, MongoDB</li>
+                  <li>Others: Git, GitHub</li>
+                </ul>
+              </div>
             </div>
+          </div>
+
+          <!-- Skills + CV -->
+          <div
+            class="bg-gray-900 p-6 rounded-xl flex flex-col md:flex-row items-center justify-between gap-6"
+          >
+            <div class="flex flex-col md:flex-row gap-8 flex-1 justify-center">
+              <div class="flex flex-col items-center gap-2">
+                <i class="fas fa-pencil-alt text-3xl text-red-500"></i>
+                <span class="text-gray-300">UI/UX Design</span>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <i class="fas fa-code text-3xl text-red-500"></i>
+                <span class="text-gray-300">Web Development</span>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <i class="fas fa-camera-retro text-3xl text-red-500"></i>
+                <span class="text-gray-300">Digital Art</span>
+              </div>
+            </div>
+
+            <a
+              href="#"
+              class="mt-4 md:mt-0 px-6 py-2 border-2 border-red-500 rounded-lg hover:bg-red-500 hover:text-white transition"
+            >
+              DOWNLOAD CV
+            </a>
           </div>
         </div>
       </div>
     </section>
+
+    <script>
+      let isSkills = true;
+
+      function toggleSection() {
+        const title = document.getElementById("title");
+        const content = document.getElementById("content");
+        const arrow = document.getElementById("arrow");
+
+        if (isSkills) {
+          title.innerText = "Education & Training";
+          content.innerHTML = `
+        <ul class="list-disc list-inside space-y-2 text-gray-400">
+          <li>Bachelor in Computer Science</li>
+          <li>MERN Stack Training</li>
+          <li>Web Development Bootcamp</li>
+        </ul>
+      `;
+          arrow.classList.add("rotate-180");
+        } else {
+          title.innerText = "Skills";
+          content.innerHTML = `
+        <ul class="list-disc list-inside space-y-2">
+          <li>Frontend: React, Tailwind CSS, JavaScript</li>
+          <li>Backend: Node, Express, MongoDB</li>
+          <li>Others: Git, GitHub</li>
+        </ul>
+      `;
+          arrow.classList.remove("rotate-180");
+        }
+
+        isSkills = !isSkills;
+      }
+    </script>
   </body>
 </html>
