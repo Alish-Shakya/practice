@@ -16,10 +16,8 @@
 
       <nav class="space-x-5">
         <a href="#" class="active hover:text-red-500"> Home</a>
-        <a href="#" class="hover:text-red-500">Services</a>
-        <a href="#" class="hover:text-red-500">Skills</a>
-        <a href="#" class="hover:text-red-500">Education</a>
-        <a href="#" class="hover:text-red-500">Experience</a>
+        <a href="#" class="hover:text-red-500">About</a>
+        <a href="#" class="hover:text-red-500">Projects</a>
         <a href="#" class="hover:text-red-500">Contact</a>
       </nav>
     </header>
@@ -115,16 +113,13 @@
             </div>
 
             <!-- Description -->
-            <!-- Description -->
-            <!-- Description -->
             <div class="bg-gray-900 p-6 rounded-xl flex-1 text-gray-300">
-              <!-- Header -->
-              <div class="flex justify-between items-center mb-6">
+              <!-- HEADER  -->
+              <div class="flex justify-between items-center">
                 <h2 id="title" class="text-2xl text-red-500 font-semibold">
                   Skills
                 </h2>
 
-                <!-- Arrow button -->
                 <button
                   onclick="toggleSection()"
                   class="text-xl transition-transform duration-500"
@@ -133,8 +128,6 @@
                   <i class="fas fa-arrow-right"></i>
                 </button>
               </div>
-
-              <!-- CONTENT -->
               <div id="content">
                 <ul class="list-disc list-inside space-y-2">
                   <li>Frontend: React, Tailwind CSS, JavaScript</li>
@@ -175,9 +168,118 @@
       </div>
     </section>
 
+    <!-- Projects Section -->
+    <section class="px-20 py-20 bg-black text-white">
+      <h2 class="text-4xl font-bold text-center mb-12">
+        My <span class="text-red-500">Projects</span>
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Project 1 -->
+        <div
+          class="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition"
+        >
+          <img
+            src="main.jpg"
+            alt="Project 1"
+            class="w-full h-48 object-cover"
+          />
+
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold mb-2">Portfolio Website</h3>
+            <p class="text-gray-400 mb-4">
+              Personal portfolio built using HTML, Tailwind CSS and JavaScript.
+            </p>
+
+            <p class="text-sm text-gray-500 mb-4">
+              Tech: HTML • Tailwind • JavaScript
+            </p>
+
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="px-4 py-2 border border-red-500 rounded hover:bg-red-500"
+              >
+                Live
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div
+          class="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition"
+        >
+          <img
+            src="main.jpg"
+            alt="Project 2"
+            class="w-full h-48 rounded-b-xl"
+          />
+
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold mb-2">
+              Student Management System
+            </h3>
+            <p class="text-gray-400 mb-4">
+              CRUD-based system for managing students using PHP & MySQL.
+            </p>
+
+            <p class="text-sm text-gray-500 mb-4">
+              Tech: PHP • MySQL • Bootstrap
+            </p>
+
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="px-4 py-2 border border-red-500 rounded hover:bg-red-500"
+              >
+                Live
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div
+          class="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition"
+        >
+          <img
+            src="main.jpg"
+            alt="Project 3"
+            class="w-full h-48 object-contain bg-black"
+          />
+
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold mb-2">Todo App</h3>
+            <p class="text-gray-400 mb-4">
+              A simple Todo application with add, delete & update features.
+            </p>
+
+            <p class="text-sm text-gray-500 mb-4">
+              Tech: JavaScript • LocalStorage
+            </p>
+
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="px-4 py-2 border border-red-500 rounded hover:bg-red-500"
+              >
+                Live
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact  -->
+    <section>
+      <div class="px-20 py-20">
+        <h2 class="text-center text-4xl text-red-500">Contact Me</h2>
+      </div>
+    </section>
     <script>
       let isSkills = true;
-
       function toggleSection() {
         const title = document.getElementById("title");
         const content = document.getElementById("content");
@@ -186,22 +288,23 @@
         if (isSkills) {
           title.innerText = "Education & Training";
           content.innerHTML = `
-        <ul class="list-disc list-inside space-y-2 text-gray-400">
+             <ul class="list-disc list-inside space-y-2 text-gray-400">
           <li>Bachelor in Computer Science</li>
           <li>MERN Stack Training</li>
           <li>Web Development Bootcamp</li>
         </ul>
-      `;
+          `;
+
           arrow.classList.add("rotate-180");
         } else {
           title.innerText = "Skills";
-          content.innerHTML = `
-        <ul class="list-disc list-inside space-y-2">
+          content.innerHTML = `  
+          <ul class="list-disc list-inside space-y-2">
           <li>Frontend: React, Tailwind CSS, JavaScript</li>
           <li>Backend: Node, Express, MongoDB</li>
           <li>Others: Git, GitHub</li>
         </ul>
-      `;
+        `;
           arrow.classList.remove("rotate-180");
         }
 
