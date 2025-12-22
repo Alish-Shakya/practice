@@ -12,7 +12,7 @@ const Navbar = () => {
   ];
   return (
     <>
-      <nav className="bg-black text-white p-5 md:px-20">
+      <nav className=" p-5 md:px-20">
         <div className="flex justify-between">
           <Link to="/" className="font-bold text-2xl">
             Shakya
